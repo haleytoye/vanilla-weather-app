@@ -29,6 +29,8 @@ function displayTemperature(response) {
   let dateEl = document.querySelector("#date");
   let iconEl = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.temperature.current;
+
   cityEl.innerHTML = response.data.city;
   tempEl.innerHTML = Math.round(response.data.temperature.current);
   feelsEl.innerHTML = Math.round(response.data.temperature.feels_like);
@@ -56,7 +58,31 @@ function handleSubmit(event) {
   search(cityInputEl.value);
 }
 
+function displayFarTemp(event) {
+  event.preventDefault();
+  celLink.classList.remove("active");
+  farLink.classList.add("active");
+  let farTempEl = (celsiusTemperature * 9) / 5 + 32;
+  let tempEle = document.querySelector("#temperature");
+  tempEle.innerHTML = Math.round(farTempEl);
+}
+
+function displayCelTemp(event) {
+  event.preventDefault();
+  celLink.classList.add("active");
+  farLink.classList.remove("active");
+  let tempEle = document.querySelector("#temperature");
+  tempEle.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let farLink = document.querySelector("#far-link");
+farLink.addEventListener("click", displayFarTemp);
+
+let celLink = document.querySelector("#cel-link");
+celLink.addEventListener("click", displayCelTemp);
 
 search("London");

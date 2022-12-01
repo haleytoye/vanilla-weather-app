@@ -39,11 +39,18 @@ li:first-letter {
   position: relative;
   font-size: 16pt;
   top: -10pt;
-  color: #0d6efd;
+
   margin-top: 20px;
 }
 a {
-  text-decoration-line: none;
+  cursor: default;
+  text-decoration: none;
+}
+a.active {
+  color: rgb(33, 33, 33);
+}
+a:hover {
+  text-decoration: underline;
 }
 
 #icon {
