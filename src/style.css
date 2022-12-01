@@ -15,6 +15,10 @@ li {
   color: #7c7c7c;
   font-size: 16pt;
   font-weight: 100;
+  text-transform: capitalize;
+}
+#wind-units {
+  text-transform: none;
 }
 
 .overveiw {

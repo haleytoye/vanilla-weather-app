@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/1d5eee0cac.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla Weather App</title>
   </head>
@@ -23,10 +24,10 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overveiw">
-            <h1>New York</h1>
+            <h1 id="city"></h1>
             <ul>
-              <li>Friday 05:00</li>
-              <li>Clear</li>
+              <li id="date-time">Friday 05:00</li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -34,7 +35,7 @@
               <div class="d-flex weather-temperature">
                 <i class="fas fa-cloud-rain" id="icon"></i>
                 <div class="weather-temperature">
-                  <strong id="temperature">12</strong
+                  <strong id="temperature"></strong
                   ><span class="weather-temperature-units">
                     °C | <a href="#">°F</a></span
                   >
@@ -43,9 +44,12 @@
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 73%</li>
-                <li>Wind: 20 km/h</li>
+                <li>Feels Like: <span id="feels-like"></span></li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>
+                  Wind: <span id="wind"></span
+                  ><span id="wind-units"> km/h</span>
+                </li>
               </ul>
             </div>
           </div>
