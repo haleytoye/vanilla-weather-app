@@ -15,10 +15,9 @@ li {
   color: #7c7c7c;
   font-size: 16pt;
   font-weight: 100;
-  text-transform: capitalize;
 }
-#wind-units {
-  text-transform: none;
+li:first-letter {
+  text-transform: capitalize;
 }
 
 .overveiw {
@@ -30,7 +29,7 @@ li {
 }
 .weather-temperature strong {
   color: black;
-  font-size: 44pt;
+  font-size: 54pt;
   font-weight: 400;
   margin-left: 10px;
   line-height: 30pt;
