@@ -24,6 +24,7 @@ li:first-letter {
   margin-bottom: 20px;
 }
 .weather-temperature {
+  margin-top: 20px;
   margin-right: 5px;
   display: flex;
 }
@@ -42,8 +43,7 @@ li:first-letter {
 }
 
 #icon {
-  font-size: 46pt;
-  color: cornflowerblue;
+  font-size: 56pt;
 }
 
 .weather-app-wrapper {

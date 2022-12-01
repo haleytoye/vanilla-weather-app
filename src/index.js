@@ -27,6 +27,7 @@ function displayTemperature(response) {
   let humidityEl = document.querySelector("#humidity");
   let windEl = document.querySelector("#wind");
   let dateEl = document.querySelector("#date");
+  let iconEl = document.querySelector("#icon");
 
   cityEl.innerHTML = response.data.city;
   tempEl.innerHTML = Math.round(response.data.temperature.current);
@@ -36,6 +37,11 @@ function displayTemperature(response) {
   windEl.innerHTML = Math.round(response.data.wind.speed);
 
   dateEl.innerHTML = formatDate(response.data.time * 1000);
+  iconEl.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconEl.setAttribute("alt", response.data.condition.description);
 }
 let apikey = "1o0f4aea9af54436031a3t4f3b2ca21f";
 let units = "metric";
