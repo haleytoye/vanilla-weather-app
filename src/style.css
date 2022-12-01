@@ -24,7 +24,7 @@ li:first-letter {
   margin-bottom: 20px;
 }
 .weather-temperature {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: 5px;
   display: flex;
 }
@@ -40,12 +40,15 @@ li:first-letter {
   font-size: 16pt;
   top: -10pt;
   color: #0d6efd;
+  margin-top: 20px;
 }
 
 #icon {
-  font-size: 56pt;
+  vertical-align: top;
 }
-
+#temperature {
+  margin-top: 20px;
+}
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;

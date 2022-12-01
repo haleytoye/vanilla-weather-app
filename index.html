@@ -23,6 +23,38 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-6" id="search-bar">
+                <input
+                  type="search"
+                  placeholder="City name..."
+                  class="form-control shadow-sm"
+                  id="city-input"
+                  autocomplete="off"
+                  autofocus="on"
+                />
+              </div>
+              <div class="col-2 btn-search">
+                <button
+                  type="submit"
+                  class="btn btn-light shadow-sm"
+                  id="btn-submit"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <div class="col-4" id="btn-current">
+                <button
+                  class="btn btn-light shadow-sm w-100"
+                  id="btn-current-location"
+                >
+                  Current Location
+                </button>
+              </div>
+            </div>
+          </form>
+
           <div class="overveiw">
             <h1 id="city"></h1>
             <ul>
