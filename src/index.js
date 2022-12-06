@@ -51,8 +51,8 @@ function displayForecast(response) {
                   <div class="forecast-temp">
                     <span class="forecast-temp-max"> ${Math.round(
                       forecastDay.temperature.maximum
-                    )}°</span>
-                    |<span class="forecast-temp-min"> ${Math.round(
+                    )}° </span>
+                    <span class="forecast-temp-min"> ${Math.round(
                       forecastDay.temperature.minimum
                     )}°</span>
                   </div>
@@ -118,30 +118,9 @@ function handleSubmit(event) {
   search(cityInputEl.value);
 }
 
-function displayFarTemp(event) {
-  event.preventDefault();
-  celLink.classList.remove("active");
-  farLink.classList.add("active");
-  let farTempEl = (celsiusTemperature * 9) / 5 + 32;
-  let tempEle = document.querySelector("#temperature");
-  tempEle.innerHTML = Math.round(farTempEl);
-}
-
-function displayCelTemp(event) {
-  event.preventDefault();
-  celLink.classList.add("active");
-  farLink.classList.remove("active");
-  let tempEle = document.querySelector("#temperature");
-  tempEle.innerHTML = Math.round(celsiusTemperature);
-}
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let farLink = document.querySelector("#far-link");
-farLink.addEventListener("click", displayFarTemp);
-
-let celLink = document.querySelector("#cel-link");
-celLink.addEventListener("click", displayCelTemp);
 search("London");
