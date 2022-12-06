@@ -75,3 +75,19 @@ a:hover {
 .open-source {
   color: #1264a3;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.forecast-date {
+  font-size: 12pt;
+  color: #5a6275;
+}
+.forecast-temp {
+  font-size: 12pt;
+  color: #5a6275;
+}
+.forecast-temp-min {
+  opacity: 0.6;
+}
