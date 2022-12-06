@@ -54,6 +54,7 @@ a:hover {
 
 #icon {
   vertical-align: top;
+  font-size: larger;
 }
 #temperature {
   margin-top: 20px;
