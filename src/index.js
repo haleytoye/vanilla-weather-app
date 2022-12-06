@@ -18,7 +18,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastEl = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -49,9 +50,16 @@ function displayForecast() {
   forecastEl.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let key = "1o0f4aea9af54436031a3t4f3b2ca21f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${key}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
-  console.log(response);
-  console.log(response.data.temperature.current);
+  console.log(response.data);
   let tempEl = document.querySelector("#temperature");
   let feelsEl = document.querySelector("#feels-like");
   let cityEl = document.querySelector("#city");
@@ -77,7 +85,10 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconEl.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
+
 function search(city) {
   let apikey = "1o0f4aea9af54436031a3t4f3b2ca21f";
   let units = "metric";
@@ -109,8 +120,6 @@ function displayCelTemp(event) {
 }
 let celsiusTemperature = null;
 
-displayForecast();
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -119,5 +128,4 @@ farLink.addEventListener("click", displayFarTemp);
 
 let celLink = document.querySelector("#cel-link");
 celLink.addEventListener("click", displayCelTemp);
-
 search("London");
