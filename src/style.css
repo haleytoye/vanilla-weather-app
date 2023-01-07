@@ -1,11 +1,8 @@
 body {
   background-color: #dfe5f9;
 }
-.container {
-  margin-bottom: 60px;
-}
 h1 {
-  color: #5a6275;
+  color: #38598b;
   font-size: 24pt;
   line-height: 20pt;
   margin-bottom: 5pt;
@@ -67,12 +64,10 @@ a:hover {
 }
 .weather-app-wrapper {
   max-width: 600px;
-  margin: 80px auto;
-
-  border-radius: 5px;
+  margin: 90px auto;
 }
 .weather-app {
-  background-color: whitesmoke;
+  background-color: white;
   padding: 25px;
   border: 2px solid #1264a3;
   border-radius: 5px;
@@ -99,4 +94,7 @@ a:hover {
 }
 .forecast-temp-min {
   opacity: 0.6;
+}
+.source {
+  text-align: center;
 }
